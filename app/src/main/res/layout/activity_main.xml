@@ -25,7 +25,6 @@
         android:layout_marginStart="@dimen/common_spacing"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="Нетология. Университет интернет-профессий"
         app:layout_constraintBottom_toTopOf="@id/published"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/menu"
@@ -41,7 +40,6 @@
         android:singleLine="true"
         android:layout_marginEnd="@dimen/common_spacing"
         android:layout_marginBottom="@dimen/common_spacing"
-        android:text="21 мая в 18:36"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
         app:layout_constraintEnd_toEndOf="@id/author"
         app:layout_constraintStart_toStartOf="@id/author"
@@ -76,7 +74,6 @@
         android:linksClickable="true"
         android:layout_marginStart="@dimen/common_spacing"
         android:layout_marginEnd="@dimen/common_spacing"
-        android:text="Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов.\n\nНо самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb"
         app:layout_constraintBottom_toTopOf="@id/post_botom_barrier"
         app:layout_constraintTop_toBottomOf="@id/header_barrier2"
         tools:text="@sample/posts.json/data/post" />
@@ -88,33 +85,32 @@
         app:barrierDirection="bottom"
         app:constraint_referenced_ids="content"/>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/likes_ico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_spacing"
         android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
         android:background="@color/transparent"
         android:contentDescription="@string/likes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/post_botom_barrier"
-        app:srcCompat="@drawable/ic_baseline_favorite_border_24"
-        />
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 
     <TextView
         android:id="@+id/likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="15"
         app:layout_constraintBottom_toBottomOf="@+id/likes_ico"
         app:layout_constraintLeft_toRightOf="@id/likes_ico"
         app:layout_constraintTop_toTopOf="@+id/likes_ico"
         tools:text="@sample/posts.json/data/likes"/>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/reposts_ico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
         android:background="@color/transparent"
         android:contentDescription="@string/reposts"
         app:layout_constraintLeft_toRightOf="@id/likes"
@@ -126,15 +122,15 @@
         android:id="@+id/reposts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="16"
         app:layout_constraintBottom_toBottomOf="@+id/reposts_ico"
         app:layout_constraintLeft_toRightOf="@id/reposts_ico"
         app:layout_constraintTop_toTopOf="@+id/reposts_ico" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/views_ico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/transparent"
         app:layout_constraintTop_toTopOf="@id/likes_ico"
         app:srcCompat="@drawable/ic_baseline_visibility_24"
         app:layout_constraintRight_toLeftOf="@id/views"
@@ -145,7 +141,6 @@
         android:id="@+id/views"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="485"
         android:layout_marginEnd="@dimen/common_spacing"
         app:layout_constraintBottom_toBottomOf="@+id/views_ico"
         app:layout_constraintEnd_toEndOf="parent"
