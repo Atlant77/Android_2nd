@@ -1,9 +1,11 @@
 package ru.netology.nmedia
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.databinding.ActivityMainBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.viewmodel.PostViewModel
 import kotlin.math.roundToLong
 
 class MainActivity : AppCompatActivity() {
@@ -12,46 +14,32 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val post = Post(
-            id = 1,
-            author = "Нетология. Университет интернет-профессий",
-            content = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов.\n\nНо самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
-            published = "21 мая в 18:36",
-            likes = 5_999,
-            reposts = 35_999,
-            views = 999,
-            likedByMe = false,
-        )
-
-        with(binding) {
-            author.text = post.author
-            published.text = post.published
-            content.text = post.content
-            likes.text = digitsToText(post.likes)
-            reposts.text = digitsToText(post.reposts)
-            views.text = digitsToText(post.views)
-
-            if (post.likedByMe) {
-                likesIco?.setImageResource(R.drawable.ic_baseline_favorite_24)
-            }
-            likesIco?.setOnClickListener {
-                post.likedByMe = !post.likedByMe
-                if (!post.likedByMe) {
-                    likesIco.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-                    post.likes = post.likes - 1
-                } else {
-                    likesIco.setImageResource(R.drawable.ic_baseline_favorite_24)
-                    post.likes = post.likes + 1
-                }
+        val viewModel by viewModels<PostViewModel>()
+        viewModel.data.observe(this){ post ->
+            with(binding) {
+                author.text = post.author
+                published.text = post.published
+                content.text = post.content
                 likes.text = digitsToText(post.likes)
-            }
-            repostsIco?.setOnClickListener {
-                post.reposts = post.reposts + 1
                 reposts.text = digitsToText(post.reposts)
-            }
-            viewsIco?.setOnClickListener {
-                post.views = post.views + 1
                 views.text = digitsToText(post.views)
+
+                val likeImage = if (post.likedByMe) {
+                    R.drawable.ic_baseline_favorite_24
+                } else {R.drawable.ic_baseline_favorite_border_24}
+               likesIco?.setImageResource(likeImage)
+                likes?.text = digitsToText(post.likes)
+            }
+            binding.likesIco?.setOnClickListener {
+                viewModel.like()
+            }
+
+            binding.repostsIco?.setOnClickListener {
+                viewModel.repost()
+            }
+
+            binding.viewsIco?.setOnClickListener {
+                viewModel.view()
             }
         }
     }
