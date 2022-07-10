@@ -1,10 +1,10 @@
-package ru.netology.nmedia
+package ru.netology.nmedia.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
-import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.viewmodel.PostViewModel
 import kotlin.math.roundToLong
 
@@ -14,38 +14,22 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel by viewModels<PostViewModel>()
-        viewModel.data.observe(this){ post ->
-            with(binding) {
-                author.text = post.author
-                published.text = post.published
-                content.text = post.content
-                likes.text = digitsToText(post.likes)
-                reposts.text = digitsToText(post.reposts)
-                views.text = digitsToText(post.views)
+        val viewModel: PostViewModel by viewModels()
+        val adapter = PostsAdapter({
+            viewModel.likeById(it.id)
+        }, {
+            viewModel.repostById(it.id)
+        })
 
-                val likeImage = if (post.likedByMe) {
-                    R.drawable.ic_baseline_favorite_24
-                } else {R.drawable.ic_baseline_favorite_border_24}
-               likesIco?.setImageResource(likeImage)
-            }
-            binding.likesIco?.setOnClickListener {
-                viewModel.like()
-            }
-
-            binding.repostsIco?.setOnClickListener {
-                viewModel.repost()
-            }
-
-            binding.viewsIco?.setOnClickListener {
-                viewModel.view()
+        binding.list.adapter = adapter
+        viewModel.data.observe(this){ posts ->
+            adapter.submitList(posts)
             }
         }
-    }
 }
 
 // Function of digits to string conversions
-private fun digitsToText(digitsToString: Long): String {
+fun digitsToText(digitsToString: Long): String {
     when (digitsToString) {
         in 0..999 -> return digitsToString.toString().take(3)
         in 1_000..9_999 -> {
