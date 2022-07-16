@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="contrast_gray">#828282</color>
+    <color name="editing_blue">#5E9BC7</color>
 </resources>

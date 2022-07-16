@@ -7,4 +7,8 @@
     <string name="likes">Лайки</string>
     <string name="reposts">Репост</string>
     <string name="views">Просмотры</string>
+    <string name="remove">Удалить</string>
+    <string name="post_text">Текст поста</string>
+    <string name="description_post_like">Описание лайка поста</string>
+    <string name="edit_post">Редактировать пост</string>
 </resources>

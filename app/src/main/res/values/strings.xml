@@ -6,4 +6,9 @@
     <string name="likes">Likes</string>
     <string name="reposts">Reposts</string>
     <string name="views">Views</string>
+    <string name="remove">Remove</string>
+    <string name="post_text">Post text</string>
+    <string name="description_post_like">Description post like</string>
+    <string name="edit_post">Edit post</string>
+    <string name="error_empty_input">Content can\'t be empty</string>
 </resources>
