@@ -10,8 +10,8 @@ android {
         applicationId "ru.netology.nmedia"
         minSdk 23
         targetSdk 32
-        versionCode 5
-        versionName '2.2'
+        versionCode 7
+        versionName '2.3'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,9 +41,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     def activity_version = "1.5.0"
     def lifecycle_version= "2.5.0"
+    def recycleview_version = "1.2.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.recyclerview:recyclerview:$recycleview_version"
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
