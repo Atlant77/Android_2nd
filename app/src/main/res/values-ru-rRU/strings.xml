@@ -11,4 +11,6 @@
     <string name="post_text">Текст поста</string>
     <string name="description_post_like">Описание лайка поста</string>
     <string name="edit_post">Редактировать пост</string>
+    <string name="error_empty_input">Поле не может быть пустым</string>
+    <string name="post_editing_id">ID редактируемого поста</string>
 </resources>

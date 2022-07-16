@@ -11,4 +11,5 @@
     <string name="description_post_like">Description post like</string>
     <string name="edit_post">Edit post</string>
     <string name="error_empty_input">Content can\'t be empty</string>
+    <string name="post_editing_id">Post editing ID = </string>
 </resources>

@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 return@observe
             }
 
-            binding.cancelMassagePostId.text = "ID = ${post.id}"
+            binding.cancelMassagePostId.text = getString(R.string.post_editing_id) + post.id.toString()
             binding.contentInput.setText(post.content)
             binding.contentInput.requestFocus()
         }
