@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         binding.list.adapter = adapter
         viewModel.data.observe(this) { posts ->
             adapter.submitList(posts) {
-                binding.list.smoothScrollToPosition(0) // функция скролинга наверх после добавления нового поста
+//                binding.list.smoothScrollToPosition(0) // функция скролинга наверх после добавления нового поста
             }
         }
 
