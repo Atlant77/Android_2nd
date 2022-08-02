@@ -12,4 +12,11 @@
     <string name="edit_post">Edit post</string>
     <string name="error_empty_input">Content can\'t be empty</string>
     <string name="post_editing_id">Post editing ID = </string>
+    <string name="share_post">Share post</string>
+    <string name="error_empty_content">Error  - empty content!</string>
+    <string name="description_post_save">Save</string>
+    <string name="string_add_post">Add post</string>
+    <string name="input_new_post">Input new post!</string>
+    <string name="video_content">Video content</string>
+    <string name="play_video_button">Play video button</string>
 </resources>

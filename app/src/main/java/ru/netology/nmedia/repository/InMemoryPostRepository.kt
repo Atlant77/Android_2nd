@@ -15,7 +15,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 15_999,
             reposts = 99,
             views = 956,
-            likedByMe = false
+            likedByMe = false,
+            videoLink = ""
         ),
         Post(
             id = nextId++,
@@ -25,7 +26,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 13_988,
             reposts = 3_976,
             views = 92,
-            likedByMe = false
+            likedByMe = false,
+            videoLink = ""
         ), Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий",
@@ -34,7 +36,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 5_999,
             reposts = 35_999,
             views = 999,
-            likedByMe = false
+            likedByMe = false,
+            videoLink = "https://www.youtube.com/watch?v=WhWc3b3KhnY"
         ),
         Post(
             id = nextId++,
@@ -44,7 +47,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 5_999,
             reposts = 35_999,
             views = 999,
-            likedByMe = false
+            likedByMe = false,
+            videoLink = ""
         ),
         Post(
             id = nextId++,
@@ -54,7 +58,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 56_999,
             reposts = 2_999,
             views = 1999,
-            likedByMe = true
+            likedByMe = true,
+            videoLink = "https://www.youtube.com/watch?v=WhWc3b3KhnY"
         ),
         Post(
             id = nextId++,
@@ -64,7 +69,8 @@ class InMemoryPostRepository: PostRepository {
             likes = 56_999,
             reposts = 2_999,
             views = 1999,
-            likedByMe = false
+            likedByMe = false,
+            videoLink = ""
         )
     ).reversed()
 
@@ -119,4 +125,7 @@ class InMemoryPostRepository: PostRepository {
         data.value = posts
     }
 
+    override fun onVideoPlay(post: Post) {
+        TODO("Not yet implemented")
+    }
 }

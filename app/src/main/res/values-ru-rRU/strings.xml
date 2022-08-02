@@ -13,4 +13,11 @@
     <string name="edit_post">Редактировать пост</string>
     <string name="error_empty_input">Поле не может быть пустым</string>
     <string name="post_editing_id">ID редактируемого поста</string>
+    <string name="share_post">Поделиться постом</string>
+    <string name="error_empty_content">Ошибка - пустой контент!</string>
+    <string name="description_post_save">Сохранить</string>
+    <string name="string_add_post">Добавить пост</string>
+    <string name="input_new_post">Введите новый пост!</string>
+    <string name="video_content">Видео контент</string>
+    <string name="play_video_button">Кнопка воспроизведения видео</string>
 </resources>

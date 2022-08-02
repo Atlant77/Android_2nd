@@ -14,13 +14,14 @@ private val empty = Post(
     likes = 0,
     reposts = 0,
     views = 0,
-    likedByMe = false
+    likedByMe = false,
+    videoLink = ""
 )
 
 class PostViewModel: ViewModel() {
     private val repository: PostRepository = InMemoryPostRepository()
     val data = repository.getAll()
-    val edited = MutableLiveData(empty)
+    private val edited = MutableLiveData(empty)
 
     fun save(){
         edited.value?.let {
