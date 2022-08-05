@@ -124,8 +124,4 @@ class InMemoryPostRepository: PostRepository {
         posts = posts.filter { it.id != id }
         data.value = posts
     }
-
-    override fun onVideoPlay(post: Post) {
-        TODO("Not yet implemented")
-    }
 }
