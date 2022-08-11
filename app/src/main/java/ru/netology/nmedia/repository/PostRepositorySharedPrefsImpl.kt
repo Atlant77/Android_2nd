@@ -76,7 +76,6 @@ class PostRepositorySharedPrefsImpl(
         posts = posts.filter { it.id == id }
         data.value = posts
         return posts[0]
-        sync()
     }
 
     private fun sync() {
