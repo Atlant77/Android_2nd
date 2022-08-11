@@ -1,6 +1,5 @@
 package ru.netology.nmedia.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -9,17 +8,18 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
-import ru.netology.nmedia.activity.digitsToText
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.util.digitsToText
 
 interface PostEventListener {
     fun onEdit(post: Post) {}
     fun onRemove(post: Post) {}
     fun onLike(post: Post) {}
     fun onRepost(post: Post) {}
-    fun onCancel() {}
+//    fun onCancel() {}
     fun onVideoPlay(post: Post) {}
+    fun onPostOpen(post: Post) {}
 }
 
 class PostsAdapter(
@@ -50,8 +50,7 @@ class PostViewHolder(
             repostsIco.text = digitsToText(post.reposts)
             viewsIco.text = digitsToText(post.views)
             likesIco.isChecked = post.likedByMe
-            videoLayout.isVisible = !post.videoLink.isNullOrBlank()
-//            likesIco.setImageResource(if (post.likedByMe) R.drawable.ic_baseline_favorite_24 else R.drawable.ic_baseline_favorite_border_24)
+            videoLayout.isVisible = post.videoLink.isNotBlank()
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
@@ -87,12 +86,14 @@ class PostViewHolder(
                 listener.onVideoPlay(post)
             }
 
+            root.setOnClickListener{
+                listener.onPostOpen(post)
+            }
+
 //            videoLayout.setOnClickListener {
 //                listener.onVideoPlay(post)
 //            }
         }
-
-
     }
 }
 

@@ -24,6 +24,7 @@ class PostRepositoryFileImpl (
             context.openFileInput(filename).bufferedReader().use {
                 posts = gson.fromJson(it, type)
                 data.value = posts
+                nextId = posts.size.toLong()
             }
         } else {
             // если файла нет, то записывется пустой массив
@@ -85,4 +86,8 @@ class PostRepositoryFileImpl (
         }
     }
 
+    override fun getById(id: Long):Post {
+        val postsForID = posts.filter { it.id == id }
+        return postsForID[0]
+    }
 }

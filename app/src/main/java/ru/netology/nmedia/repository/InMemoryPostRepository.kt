@@ -124,4 +124,10 @@ class InMemoryPostRepository: PostRepository {
         posts = posts.filter { it.id != id }
         data.value = posts
     }
+
+    override fun getById(id: Long):Post {
+        posts = posts.filter { it.id == id }
+        data.value = posts
+        return posts[0]
+    }
 }

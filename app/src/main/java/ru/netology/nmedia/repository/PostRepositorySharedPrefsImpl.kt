@@ -72,10 +72,19 @@ class PostRepositorySharedPrefsImpl(
         sync()
     }
 
+    override fun getById(id: Long):Post {
+        posts = posts.filter { it.id == id }
+        data.value = posts
+        return posts[0]
+        sync()
+    }
+
     private fun sync() {
         with(prefs.edit()) {
             putString(key, gson.toJson(posts))
             apply()
         }
     }
+
+
 }
