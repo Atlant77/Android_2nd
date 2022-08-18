@@ -3,7 +3,7 @@ package ru.netology.nmedia.util
 import kotlin.math.roundToLong
 
 // Function of digits to string conversions
-fun digitsToText(digitsToString: Long): String {
+fun digitsToText(digitsToString: Int): String {
     when (digitsToString) {
         in 0..999 -> return digitsToString.toString().take(3)
         in 1_000..9_999 -> {
