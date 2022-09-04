@@ -19,4 +19,9 @@
     <string name="input_new_post">Input new post!</string>
     <string name="video_content">Video content</string>
     <string name="play_video_button">Play video button</string>
+    <string name="channel_remote_name">Server notifications</string>
+    <string name="channel_remote_description">Notification from remote server</string>
+    <string name="notification_userliked">User %1$s liked %2$s\'s post</string>
+    <string name="notification_userNewPost">User %1$s add new post ID = %2$s\</string>
+    <string name="not_nown_action_notification">Not nown action notification from server!</string>
 </resources>

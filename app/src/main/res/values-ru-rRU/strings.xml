@@ -20,4 +20,9 @@
     <string name="input_new_post">Введите новый пост!</string>
     <string name="video_content">Видео контент</string>
     <string name="play_video_button">Кнопка воспроизведения видео</string>
+    <string name="channel_remote_name">Сообщения сервера</string>
+    <string name="channel_remote_description">Сообщения удаленного сервера</string>
+    <string name="notification_userliked">Пользователь %1$s лайкнул %2$s пост</string>
+    <string name="notification_userNewPost">Пользователь %1$s добавил новый пост ID = %2$s</string>
+    <string name="not_nown_action_notification">Неизвествое свойство action от сервера!</string>
 </resources>
